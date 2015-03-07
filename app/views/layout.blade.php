@@ -12,7 +12,7 @@
 			<div clas="header">
 				<ul class="nav nav-pills pull-right">
 					<li>{{ HTML::link('/','Inicio') }}</li>
-					<li>{{ HTML::link('crear','Crear Usuario') }}</li>
+					<li>{{ HTML::link('usuario','Crear Usuario') }}</li>
 					<li>{{ HTML::link('','Mostrar Usuarios') }}</li>
 				</ul>
 				<h3 class="text-muted">Cosa</h3>

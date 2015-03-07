@@ -3,7 +3,7 @@ class Usuarios extends Eloquent {
 	protected $table    = 'usuarios';
 	protected $fillable = array('nombre','apellido','correo','zona','plan_id');
 
-	public static function nuevoUsuario(input) {
+	public static function nuevoUsuario($input) {
 		$respuesta = array();
 
 		$reglas = array(
@@ -20,7 +20,7 @@ class Usuarios extends Eloquent {
 			$respuesta['error']   = true;
 		}
 		else {
-			$usuarios = static::create($input)
+			$usuarios = static::create($input);
 
 			$respuesta['mensaje'] = 'Usuario creado!';
 			$respuesta['error']   = false;

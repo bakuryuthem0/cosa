@@ -1,5 +1,5 @@
 <?php
-class Usuarios extends Eloquent {
+class Planes extends Eloquent {
 	protected $table = 'planes';
 }
 ?>
