@@ -15,3 +15,10 @@ Route::get('/', function()
 {
 	return View::make('inicio');
 });
+
+Route::get('usuario','UsuariosController@formusuario');
+Route::post('usuario','UsuariosController@crearusuario');
+
+Route::get('lista','ListaController@mostrarusuarios');
+Route::get('pago','ListaController@pagar');
+?>
