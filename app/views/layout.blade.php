@@ -4,6 +4,7 @@
 		<title>Crear Usuario</title>
 		{{HTML::style("css/bootstrap.min.css")}}
     	{{HTML::style("css/jumbotron-narrow.css")}}
+    	{{HTML::script("js/custom.css")}}
 	</head>
 
 	<body>

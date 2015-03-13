@@ -13,4 +13,8 @@ class ListaController extends BaseController {
 		$bancos  = Bancos::all();
 		return View::make('pagos.pagar', array('datos' => $datos, 'plan' => $plan, 'bancos' => $bancos));
 	}
+
+	public function seleccionar() {
+		
+	}
 }

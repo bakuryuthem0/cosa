@@ -22,5 +22,6 @@ Route::post('usuario','UsuariosController@crearusuario');
 Route::get('lista','ListaController@mostrarusuarios');
 Route::get('pago/{id}','ListaController@pagar');
 
-Route::Post('banco','BancoController@seleccionar')
+Route::Post('banco','ListaController@seleccionar');
+
 ?>
