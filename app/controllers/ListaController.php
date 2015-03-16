@@ -6,8 +6,16 @@ class ListaController extends BaseController {
 		return View::make('usuarios.mostrar', array('usuarios' => $usuarios));
 	}
 
-	public function pagar() {
-		
-		return View::make('pagos.pagar', array('datos' => $datos));
+	public function pagar($id) {
+		$datos   = Usuarios::find($id);
+		$planid  = $datos->plan_id;
+		$plan    = Planes::find($planid);
+		$bancos  = Bancos::all();
+		return View::make('pagos.pagar', array('datos' => $datos, 'plan' => $plan, 'bancos' => $bancos));
+	}
+
+	public function seleccionar($id) {
+		$cuentas = Num_cuenta::find($banco_id);
+		return Response::json(array('cuentas' => $cuentas));
 	}
 }

@@ -20,5 +20,8 @@ Route::get('usuario','UsuariosController@formusuario');
 Route::post('usuario','UsuariosController@crearusuario');
 
 Route::get('lista','ListaController@mostrarusuarios');
-Route::get('pago','ListaController@pagar');
+
+Route::get('pago/{id}','ListaController@pagar');
+Route::get('banco','ListaController@seleccionar');
+
 ?>
