@@ -11,9 +11,9 @@
 
 	{{ Form::open(array('url' => 'banco')) }}
 		<div class="form-group">
-			<p>Seleccione el banco en el que quiere realizar su pago</p>
+			<p>Seleccione un banco</p>
 			<select id="bancos" class="form-control" name="banco_id">
-				<option value="" disabled selected style="display:none">Banco</option>
+			    <option value="" disabled selected style="display:none">Seleccione</option>
 				@foreach($bancos as $banco)
 					<option value="{{$banco->id}}"> {{ $banco->descripcion }} </option>
 				@endforeach
@@ -23,9 +23,7 @@
 	
 	<div id="cuentas" class="panel panel-primary">
 		<ul class="list-group">
-			@foreach($bancos as $banco)
-				<li class="list-group-item"> {{ $banco->descripcion }} </li>
-			@endforeach</div>
+			
 		</ul>
 	</div>
 

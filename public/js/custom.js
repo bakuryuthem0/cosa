@@ -1,23 +1,32 @@
 $(document).ready(function() { 	
 	$('.jumbotron').hide();
 	$('.jumbotron').fadeIn(2500);
-	$('#cuentas').hide();
-	var id;
+});
 
-	$('#bancos option').click(function() {
-		id = $(this).attr('value');
+$(document).ready(function() {
+	$('#cuentas').hide();
+
+	$('#bancos').change(function() {
+		var id = $('#bancos option:selected').attr('value');
 		console.log(id);
+		
+		$.ajax({
+			url: '../banco',
+			type: 'GET',
+			dataType: 'json',
+			data: {'bancoid': id},
+			success:function(response)
+			{	
+				$('#cuentas').slideUp('slow', function() { 
+				
+				for (cuenta in cuentas)
+				{
+					$('#cuentas ul').append('<li class="list-group-item">'+ cuenta['id'] +'</li>');
+				}
+					$('#cuentas').slideDown('slow'); });
+			}
+		});
 	})
 
-	$.ajax({
-		url: 'banco',
-		type: 'GET',
-		dataType: 'json',
-		data: {bancoid: id},
-		succes:function(response)
-		{
-			$('#cuentas').slideUp('slow', function() { $('#cuentas').slideDown('slow'); });
-			console.log(3);
-		}
-	});
+
 });
