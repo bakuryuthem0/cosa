@@ -14,8 +14,9 @@ class ListaController extends BaseController {
 		return View::make('pagos.pagar', array('datos' => $datos, 'plan' => $plan, 'bancos' => $bancos));
 	}
 
-	public function seleccionar($id) {
-		$cuentas = Num_cuenta::find($banco_id);
+	public function seleccionar() {
+		$banco = Bancos::find(Input::get('bancoid'));
+		$cuentas = $banco->cuentas;
 		return Response::json(array('cuentas' => $cuentas));
 	}
 }
