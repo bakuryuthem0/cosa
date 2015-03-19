@@ -1,5 +1,5 @@
 <?php
-class Num_cuenta extends Eloquent {
+class NumCuenta extends Eloquent {
 	protected $table = 'num_cuenta';
 }
 ?>

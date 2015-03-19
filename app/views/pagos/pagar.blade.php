@@ -13,7 +13,7 @@
 		<div class="form-group">
 			<p>Seleccione el banco en el que quiere realizar su pago</p>
 			<select id="bancos" class="form-control" name="banco_id">
-				<option value="" disabled selected style="display:none">Banco</option>
+				<option value="">Seleccione el banco</option>
 				@foreach($bancos as $banco)
 					<option value="{{$banco->id}}"> {{ $banco->descripcion }} </option>
 				@endforeach

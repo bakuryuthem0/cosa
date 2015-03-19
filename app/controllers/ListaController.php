@@ -15,8 +15,7 @@ class ListaController extends BaseController {
 	}
 
 	public function seleccionar() {
-		$banco = Bancos::find(Input::get('bancoid'));
-		$cuentas = $banco->cuentas;
-		return Response::json(array('cuentas' => $cuentas));
+		$num_cuentas = NumCuenta::where('banco_id','=',Input::get('bancoid'))->get();
+		return $num_cuentas;
 	}
 }
