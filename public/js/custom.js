@@ -17,16 +17,17 @@ $(document).ready(function() {
 			data: {'bancoid': id},
 			success:function(response)
 			{	
+				console.log(response['cuentas']);
 				$('#cuentas').slideUp('slow', function() { 
-				
-				for (cuenta in cuentas)
-				{
-					$('#cuentas ul').append('<li class="list-group-item">'+ cuenta['id'] +'</li>');
-				}
-					$('#cuentas').slideDown('slow'); });
+					$('#cuentas ul').empty();
+					for (var cuenta in response['cuentas'])
+					{
+						$('#cuentas ul').append('<li class="list-group-item">'+ response['cuentas'][cuenta].numero +'</li>');
+						$('#cuentas ul').append('<li class="list-group-item">'+ response['cuentas'][cuenta].tipo +'</li>');
+					}
+					$('#cuentas').slideDown('slow'); 
+				});
 			}
 		});
 	})
-
-
 });
