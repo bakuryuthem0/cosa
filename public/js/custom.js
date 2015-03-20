@@ -19,11 +19,12 @@ $(document).ready(function() {
 			{	
 				console.log(response['cuentas']);
 				$('#cuentas').slideUp('slow', function() { 
-					$('#cuentas ul').empty();
+					$('#cuentas tbody').empty();
 					for (var cuenta in response['cuentas'])
 					{
-						$('#cuentas ul').append('<li class="list-group-item">'+ response['cuentas'][cuenta].numero +'</li>');
-						$('#cuentas ul').append('<li class="list-group-item">'+ response['cuentas'][cuenta].tipo +'</li>');
+						$('#cuentas tbody').append('<tr>');
+						$('#cuentas tr:last').append('<td>'+ response['cuentas'][cuenta].numero +'</td>');
+						$('#cuentas tr:last').append('<td>'+ response['cuentas'][cuenta].tipo +'</td>');
 					}
 					$('#cuentas').slideDown('slow'); 
 				});
