@@ -25,10 +25,10 @@
 		</div>
 	{{ Form::close() }}
 	
-	<div id="cuentas" class="panel panel-primary">
-		<ul class="list-group">
-			
-		</ul>
+	<div id="cuentas">
+		<table class="table table-striped">
+			<tbody></tbody>
+		</table>		
 	</div>
 
 @stop

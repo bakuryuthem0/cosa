@@ -16,6 +16,6 @@ class ListaController extends BaseController {
 
 	public function seleccionar() {
 		$num_cuentas = NumCuenta::where('banco_id','=',Input::get('bancoid'))->get();
-		return $num_cuentas;
+		return $num_cuentas->toArray();
 	}
 }

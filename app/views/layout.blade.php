@@ -4,6 +4,7 @@
 		<title>Cosa</title>
 		{{HTML::style('css/bootstrap.min.css')}}
     	{{HTML::style('css/jumbotron-narrow.css')}}
+    	{{HTML::style('css/custom.css')}}
     	{{HTML::script('js/jquery-1.11.2.js')}}
     	{{HTML::script('js/bootstrap.min.js')}}
     	{{HTML::script('js/custom.js')}}
